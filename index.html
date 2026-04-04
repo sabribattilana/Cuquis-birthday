@@ -4,14 +4,17 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Feliz Cumpleaños, Cuquis 🎂</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
   <style>
     /* ── Reset & base ───────────────────────────── */
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
-      font-family: 'Georgia', serif;
-      background: #fff0f5;
-      color: #3a1a2e;
+      font-family: 'Inter', system-ui, sans-serif;
+      background: #f0f6ff;
+      color: #0d1f3c;
       overflow-x: hidden;
     }
 
@@ -33,23 +36,36 @@
       justify-content: center;
       text-align: center;
       padding: 2rem;
-      background: linear-gradient(135deg, #ffe4ec 0%, #ffd6f0 50%, #e8d5ff 100%);
+      background: linear-gradient(135deg, #0a1628 0%, #0d2d6b 50%, #0f3fa8 100%);
       position: relative;
       overflow: hidden;
     }
 
-    /* floating hearts background */
-    #hero::before {
-      content: '💕 💗 💖 💕 💗 💖 💕 💗';
+    /* animated grid background */
+    #hero::after {
+      content: '';
       position: absolute;
-      top: -2rem;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(99,179,255,0.06) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(99,179,255,0.06) 1px, transparent 1px);
+      background-size: 48px 48px;
+      pointer-events: none;
+    }
+
+    /* floating stars/dots */
+    #hero::before {
+      content: '✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦ · ✦';
+      position: absolute;
+      top: 10%;
       left: 0;
       width: 200%;
-      font-size: 2rem;
-      opacity: 0.12;
+      font-size: 1.2rem;
+      color: rgba(147, 197, 253, 0.25);
       white-space: nowrap;
-      animation: drift 18s linear infinite;
+      animation: drift 22s linear infinite;
       pointer-events: none;
+      z-index: 1;
     }
 
     @keyframes drift {
@@ -60,6 +76,8 @@
     .hero-emoji {
       font-size: clamp(3rem, 10vw, 6rem);
       animation: bounce 1.2s ease-in-out infinite alternate;
+      position: relative;
+      z-index: 2;
     }
 
     @keyframes bounce {
@@ -70,7 +88,7 @@
     .hero-title {
       font-size: clamp(2.4rem, 8vw, 5.5rem);
       font-weight: 900;
-      background: linear-gradient(90deg, #e91e8c, #9c27b0, #e91e8c);
+      background: linear-gradient(90deg, #60a5fa, #a5f3fc, #60a5fa);
       background-size: 200%;
       -webkit-background-clip: text;
       -webkit-text-fill-color: transparent;
@@ -78,6 +96,9 @@
       animation: shimmer 3s linear infinite;
       line-height: 1.1;
       margin: 0.4rem 0;
+      letter-spacing: -0.02em;
+      position: relative;
+      z-index: 2;
     }
 
     @keyframes shimmer {
@@ -86,27 +107,35 @@
     }
 
     .hero-subtitle {
-      font-size: clamp(1.1rem, 3vw, 1.6rem);
-      color: #8e3a6e;
+      font-size: clamp(1rem, 3vw, 1.4rem);
+      color: #93c5fd;
       margin-bottom: 2.5rem;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.04em;
+      font-weight: 400;
+      position: relative;
+      z-index: 2;
     }
 
     /* ── Love question card ─────────────────────── */
     .love-card {
-      background: white;
-      border-radius: 2rem;
+      background: rgba(255,255,255,0.06);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 1px solid rgba(147, 197, 253, 0.2);
+      border-radius: 1.5rem;
       padding: 2.5rem 3rem;
-      box-shadow: 0 20px 60px rgba(233, 30, 140, 0.18);
       max-width: 420px;
       width: 100%;
+      position: relative;
+      z-index: 2;
     }
 
     .love-question {
       font-size: clamp(1.3rem, 4vw, 1.8rem);
       font-weight: 700;
-      color: #c2185b;
+      color: #e0f2fe;
       margin-bottom: 1.6rem;
+      letter-spacing: -0.01em;
     }
 
     .love-buttons {
@@ -119,48 +148,50 @@
     }
 
     .btn-yes {
-      background: linear-gradient(135deg, #e91e8c, #9c27b0);
+      background: linear-gradient(135deg, #2563eb, #0ea5e9);
       color: white;
       border: none;
       border-radius: 50px;
       padding: 0.85rem 2.2rem;
-      font-size: 1.15rem;
+      font-size: 1.1rem;
       font-weight: 700;
       cursor: pointer;
       transition: transform 0.15s, box-shadow 0.15s;
-      box-shadow: 0 6px 20px rgba(233, 30, 140, 0.35);
-      letter-spacing: 0.03em;
+      box-shadow: 0 6px 24px rgba(37, 99, 235, 0.5);
+      letter-spacing: 0.02em;
+      font-family: inherit;
     }
 
     .btn-yes:hover {
       transform: scale(1.08);
-      box-shadow: 0 10px 30px rgba(233, 30, 140, 0.45);
+      box-shadow: 0 10px 32px rgba(37, 99, 235, 0.65);
     }
 
     .btn-yes:active { transform: scale(0.96); }
 
     .btn-no {
-      background: #f8f8f8;
-      color: #aaa;
-      border: 2px solid #ddd;
+      background: rgba(255,255,255,0.08);
+      color: rgba(255,255,255,0.35);
+      border: 1px solid rgba(255,255,255,0.15);
       border-radius: 50px;
       padding: 0.85rem 2.2rem;
-      font-size: 1.15rem;
-      font-weight: 700;
+      font-size: 1.1rem;
+      font-weight: 600;
       cursor: default;
       position: absolute;
       transition: left 0.08s, top 0.08s;
       user-select: none;
-      pointer-events: none; /* fallback: truly unclickable */
+      pointer-events: none;
       white-space: nowrap;
+      font-family: inherit;
     }
 
     /* answer message */
     .love-answer {
       margin-top: 1.4rem;
-      font-size: 1.3rem;
+      font-size: 1.2rem;
       font-weight: 700;
-      color: #e91e8c;
+      color: #7dd3fc;
       min-height: 2rem;
       animation: popIn 0.4s ease;
     }
@@ -181,15 +212,17 @@
       text-align: center;
       font-size: clamp(1.8rem, 5vw, 3rem);
       font-weight: 900;
-      color: #9c27b0;
+      color: #1e40af;
       margin-bottom: 0.5rem;
+      letter-spacing: -0.02em;
     }
 
     .section-sub {
       text-align: center;
-      color: #b06090;
-      font-size: 1.1rem;
+      color: #3b82f6;
+      font-size: 1.05rem;
       margin-bottom: 3.5rem;
+      font-weight: 400;
     }
 
     /* ── Category ───────────────────────────────── */
@@ -201,12 +234,13 @@
       display: flex;
       align-items: center;
       gap: 0.6rem;
-      font-size: clamp(1.4rem, 4vw, 2rem);
+      font-size: clamp(1.2rem, 3.5vw, 1.7rem);
       font-weight: 800;
-      color: #c2185b;
+      color: #1d4ed8;
       margin-bottom: 2rem;
-      padding-bottom: 0.6rem;
-      border-bottom: 3px solid #f8bbd0;
+      padding-bottom: 0.7rem;
+      border-bottom: 2px solid #bfdbfe;
+      letter-spacing: -0.01em;
     }
 
     /* ── Memory grid ────────────────────────────── */
@@ -219,22 +253,23 @@
     /* ── Memory card ────────────────────────────── */
     .memory-card {
       background: white;
-      border-radius: 1.5rem;
+      border-radius: 1.2rem;
       overflow: hidden;
-      box-shadow: 0 8px 30px rgba(156, 39, 176, 0.1);
+      box-shadow: 0 4px 20px rgba(30, 64, 175, 0.08);
+      border: 1px solid #e0eaff;
       transition: transform 0.25s, box-shadow 0.25s;
     }
 
     .memory-card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 45px rgba(156, 39, 176, 0.18);
+      box-shadow: 0 16px 40px rgba(30, 64, 175, 0.15);
     }
 
     .memory-img-wrap {
       width: 100%;
       aspect-ratio: 4/3;
       overflow: hidden;
-      background: linear-gradient(135deg, #ffe4ec, #e8d5ff);
+      background: linear-gradient(135deg, #dbeafe, #e0f2fe);
       display: flex;
       align-items: center;
       justify-content: center;
@@ -248,36 +283,36 @@
       display: block;
     }
 
-    /* placeholder shown when no image src */
     .memory-img-wrap .placeholder {
       font-size: 4rem;
-      opacity: 0.4;
+      opacity: 0.35;
     }
 
     .memory-body {
-      padding: 1.3rem 1.5rem 1.6rem;
+      padding: 1.2rem 1.4rem 1.5rem;
     }
 
     .memory-title {
-      font-size: 1.05rem;
+      font-size: 1rem;
       font-weight: 700;
-      color: #6a1b9a;
-      margin-bottom: 0.45rem;
+      color: #1e3a8a;
+      margin-bottom: 0.4rem;
+      letter-spacing: -0.01em;
     }
 
     .memory-text {
-      font-size: 0.95rem;
-      color: #5a3a4a;
-      line-height: 1.6;
+      font-size: 0.92rem;
+      color: #475569;
+      line-height: 1.65;
     }
 
     /* ── Footer ─────────────────────────────────── */
     footer {
       text-align: center;
       padding: 3rem 1rem 4rem;
-      color: #b06090;
+      color: #3b82f6;
       font-size: 1rem;
-      background: linear-gradient(to top, #ffe4ec, #fff0f5);
+      background: linear-gradient(to top, #0d2d6b, #f0f6ff);
     }
 
     footer .big-heart {
@@ -285,6 +320,11 @@
       font-size: 3rem;
       margin-bottom: 0.5rem;
       animation: pulse 1.4s ease-in-out infinite;
+    }
+
+    footer p {
+      color: #93c5fd;
+      font-size: 1.05rem;
     }
 
     @keyframes pulse {
@@ -309,12 +349,12 @@
 <section id="hero">
   <div class="hero-emoji">🎂</div>
   <h1 class="hero-title">¡Feliz Cumpleaños,<br>Cuquis!</h1>
-  <p class="hero-subtitle">Hoy es tu día y quiero que lo sepas 💕</p>
+  <p class="hero-subtitle">Hoy es tu día y quiero que lo sepas 🩵</p>
 
   <div class="love-card">
-    <p class="love-question">¿Me amas? 💖</p>
+    <p class="love-question">¿Me amas? 💙</p>
     <div class="love-buttons" id="loveButtons">
-      <button class="btn-yes" id="btnYes" onclick="onYes()">¡Sí! 💗</button>
+      <button class="btn-yes" id="btnYes" onclick="onYes()">¡Sí! 💙</button>
       <button class="btn-no"  id="btnNo">No</button>
     </div>
     <div class="love-answer" id="loveAnswer"></div>
@@ -325,7 +365,7 @@
      MEMORIES
 ════════════════════════════════════════════ -->
 <section id="memorias">
-  <h2 class="section-heading">Nuestros Recuerdos 💞</h2>
+  <h2 class="section-heading">Nuestros Recuerdos 🩵</h2>
   <p class="section-sub">Casi 6 años de pura magia juntos</p>
 
   <!-- ── VIAJES ── -->
@@ -433,9 +473,9 @@
      FOOTER
 ════════════════════════════════════════════ -->
 <footer>
-  <span class="big-heart">💕</span>
-  Te amo, Cuquis. Gracias por cada uno de estos años.<br>
-  ¡Que sean muchos más! 🥂
+  <span class="big-heart">💙</span>
+  <p>Te amo, Cuquis. Gracias por cada uno de estos años.<br>
+  ¡Que sean muchos más! 🥂</p>
 </footer>
 
 <script>
@@ -539,7 +579,7 @@ function onYes() {
   resize();
   window.addEventListener('resize', resize);
 
-  const COLORS = ['#e91e8c','#9c27b0','#f06292','#ce93d8','#ffb3d9','#ff80ab'];
+  const COLORS = ['#2563eb','#0ea5e9','#38bdf8','#60a5fa','#a5f3fc','#93c5fd','#1d4ed8'];
   const SHAPES = ['■', '●', '▲', '★', '♥'];
 
   function spawn() {
