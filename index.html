@@ -332,6 +332,49 @@
       50%       { transform: scale(1.25); }
     }
 
+    /* ── Nosotros / LEGO section ────────────────── */
+    #nosotros {
+      padding: 4rem 1.5rem 3rem;
+      background: linear-gradient(to bottom, #e8f4ff, #f0f6ff);
+      text-align: center;
+    }
+    .lego-scene-container {
+      max-width: 540px;
+      margin: 0 auto;
+      border-radius: 1.5rem;
+      overflow: hidden;
+      box-shadow: 0 8px 40px rgba(30, 64, 175, 0.18);
+    }
+    .lego-svg { width: 100%; height: auto; display: block; }
+
+    .facu-group {
+      animation: legoSway 2.2s ease-in-out infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center bottom;
+    }
+    .sabri-group {
+      animation: legoFloat 2.8s ease-in-out infinite alternate;
+      transform-box: fill-box;
+      transform-origin: center bottom;
+    }
+    .lego-heart {
+      animation: heartPulse 1.3s ease-in-out infinite;
+      transform-box: fill-box;
+      transform-origin: center center;
+    }
+    @keyframes legoSway {
+      from { transform: rotate(-3deg); }
+      to   { transform: rotate(3deg); }
+    }
+    @keyframes legoFloat {
+      from { transform: translateY(0); }
+      to   { transform: translateY(-9px); }
+    }
+    @keyframes heartPulse {
+      0%, 100% { transform: scale(1); }
+      50%       { transform: scale(1.35); }
+    }
+
     /* ── Responsive tweaks ──────────────────────── */
     @media (max-width: 480px) {
       .love-card { padding: 1.8rem 1.4rem; }
@@ -358,6 +401,239 @@
       <button class="btn-no"  id="btnNo">No</button>
     </div>
     <div class="love-answer" id="loveAnswer"></div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
+     NOSOTROS / LEGO
+════════════════════════════════════════════ -->
+<section id="nosotros">
+  <h2 class="section-heading">Nosotros 🩵</h2>
+  <p class="section-sub">Versión LEGO, misma vibra</p>
+  <div class="lego-scene-container">
+    <svg viewBox="0 0 500 365" xmlns="http://www.w3.org/2000/svg" class="lego-svg">
+      <defs>
+        <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#0d1b3e"/>
+          <stop offset="38%"  stop-color="#b84e18"/>
+          <stop offset="62%"  stop-color="#f09030"/>
+          <stop offset="100%" stop-color="#f5c040"/>
+        </linearGradient>
+        <linearGradient id="g-water" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#1a3880"/>
+          <stop offset="100%" stop-color="#2a58b0"/>
+        </linearGradient>
+        <linearGradient id="g-ground" x1="0" y1="0" x2="0" y2="1">
+          <stop offset="0%"   stop-color="#d8c8a0"/>
+          <stop offset="100%" stop-color="#c4b48c"/>
+        </linearGradient>
+      </defs>
+
+      <!-- Sky -->
+      <rect width="500" height="365" fill="url(#g-sky)"/>
+
+      <!-- Sun glow layers -->
+      <circle cx="368" cy="218" r="68" fill="#FFD700" opacity="0.1"/>
+      <circle cx="368" cy="218" r="44" fill="#FFD700" opacity="0.2"/>
+      <circle cx="368" cy="218" r="26" fill="#FFD700" opacity="0.88"/>
+      <ellipse cx="368" cy="248" rx="85" ry="10" fill="#FFD700" opacity="0.22"/>
+
+      <!-- Left palm tree silhouette -->
+      <rect x="64" y="152" width="7" height="108" rx="3" fill="#090e1c" opacity="0.8"/>
+      <ellipse cx="67" cy="157" rx="36" ry="14" fill="#090e1c" opacity="0.8" transform="rotate(-22 67 157)"/>
+      <ellipse cx="67" cy="160" rx="30" ry="12" fill="#090e1c" opacity="0.8" transform="rotate(16 67 160)"/>
+      <ellipse cx="67" cy="154" rx="28" ry="11" fill="#090e1c" opacity="0.8" transform="rotate(-40 67 154)"/>
+
+      <!-- Right palm tree silhouette -->
+      <rect x="416" y="134" width="7" height="126" rx="3" fill="#090e1c" opacity="0.8"/>
+      <ellipse cx="419" cy="139" rx="40" ry="14" fill="#090e1c" opacity="0.8" transform="rotate(-16 419 139)"/>
+      <ellipse cx="419" cy="143" rx="34" ry="12" fill="#090e1c" opacity="0.8" transform="rotate(22 419 143)"/>
+      <ellipse cx="419" cy="136" rx="30" ry="11" fill="#090e1c" opacity="0.8" transform="rotate(-38 419 136)"/>
+
+      <!-- Center-back palm -->
+      <rect x="320" y="162" width="6" height="98" rx="2" fill="#090e1c" opacity="0.5"/>
+      <ellipse cx="323" cy="167" rx="30" ry="12" fill="#090e1c" opacity="0.5" transform="rotate(-12 323 167)"/>
+      <ellipse cx="323" cy="170" rx="26" ry="10" fill="#090e1c" opacity="0.5" transform="rotate(26 323 170)"/>
+
+      <!-- Water / pool -->
+      <rect x="0" y="248" width="500" height="52" fill="url(#g-water)" opacity="0.9"/>
+      <ellipse cx="368" cy="254" rx="18" ry="24" fill="#FFD700" opacity="0.28"/>
+      <line x1="28"  y1="262" x2="130" y2="262" stroke="white" stroke-width="1.5" opacity="0.13"/>
+      <line x1="186" y1="274" x2="268" y2="274" stroke="white" stroke-width="1.5" opacity="0.11"/>
+      <line x1="402" y1="260" x2="462" y2="260" stroke="white" stroke-width="1.5" opacity="0.13"/>
+
+      <!-- Pool border -->
+      <rect x="0" y="297" width="500" height="6" fill="#c0b090"/>
+
+      <!-- Ground / tiles -->
+      <rect x="0" y="300" width="500" height="65" fill="url(#g-ground)"/>
+      <line x1="0" y1="316" x2="500" y2="316" stroke="#b0a078" stroke-width="0.7"/>
+      <line x1="0" y1="332" x2="500" y2="332" stroke="#b0a078" stroke-width="0.7"/>
+      <line x1="0" y1="348" x2="500" y2="348" stroke="#b0a078" stroke-width="0.7"/>
+      <line x1="72"  y1="300" x2="72"  y2="365" stroke="#b0a078" stroke-width="0.7"/>
+      <line x1="144" y1="300" x2="144" y2="365" stroke="#b0a078" stroke-width="0.7"/>
+      <line x1="216" y1="300" x2="216" y2="365" stroke="#b0a078" stroke-width="0.7"/>
+      <line x1="288" y1="300" x2="288" y2="365" stroke="#b0a078" stroke-width="0.7"/>
+      <line x1="360" y1="300" x2="360" y2="365" stroke="#b0a078" stroke-width="0.7"/>
+      <line x1="432" y1="300" x2="432" y2="365" stroke="#b0a078" stroke-width="0.7"/>
+
+      <!-- Shadows -->
+      <ellipse cx="162" cy="302" rx="26" ry="4" fill="#000" opacity="0.16"/>
+      <ellipse cx="298" cy="302" rx="26" ry="4" fill="#000" opacity="0.16"/>
+
+      <!-- ═══ FACU (center x=162, feet y=300) ═══ -->
+      <g class="facu-group">
+        <!-- Birthday hat (behind stud) -->
+        <polygon points="162,144 138,188 186,188" fill="#2563eb"/>
+        <polygon points="162,144 145,186 154,186" fill="#60a5fa" opacity="0.45"/>
+        <rect x="138" y="181" width="48" height="7" rx="2" fill="#1d4ed8"/>
+        <circle cx="162" cy="140" r="7" fill="#fbbf24"/>
+        <text x="162" y="143.5" text-anchor="middle" font-size="7" fill="#1a3a8a" font-weight="900">★</text>
+
+        <!-- Dark short hair (behind head top) -->
+        <rect x="141" y="183" width="42" height="20" rx="9" fill="#181818"/>
+
+        <!-- Head stud -->
+        <ellipse cx="162" cy="182" rx="9" ry="5" fill="#C47840"/>
+
+        <!-- Head -->
+        <rect x="143" y="185" width="38" height="34" rx="6" fill="#C47840"/>
+
+        <!-- Eyebrows -->
+        <path d="M149 195 Q153 192 158 195" stroke="#1a1a1a" stroke-width="1.6" fill="none"/>
+        <path d="M166 195 Q171 192 175 195" stroke="#1a1a1a" stroke-width="1.6" fill="none"/>
+        <!-- Eyes -->
+        <ellipse cx="153" cy="201" rx="3.8" ry="3.8" fill="white"/>
+        <ellipse cx="171" cy="201" rx="3.8" ry="3.8" fill="white"/>
+        <circle  cx="154" cy="202" r="2.3" fill="#120904"/>
+        <circle  cx="172" cy="202" r="2.3" fill="#120904"/>
+        <circle  cx="155" cy="201" r="0.9" fill="white"/>
+        <circle  cx="173" cy="201" r="0.9" fill="white"/>
+        <!-- Smile + teeth -->
+        <path d="M150 213 Q162 221 174 213" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round"/>
+        <path d="M153 213 Q162 219 171 213" fill="white" opacity="0.55"/>
+
+        <!-- Neck -->
+        <rect x="153" y="219" width="18" height="8" rx="2" fill="#C47840"/>
+
+        <!-- Left arm + hand -->
+        <rect x="122" y="227" width="14" height="28" rx="5" fill="#E8C878"/>
+        <rect x="121" y="253" width="16" height="10" rx="4" fill="#C47840"/>
+
+        <!-- Right arm raised (waving) -->
+        <g transform="rotate(-48 177 229)">
+          <rect x="176" y="227" width="14" height="28" rx="5" fill="#E8C878"/>
+          <rect x="175" y="253" width="16" height="10" rx="4" fill="#C47840"/>
+        </g>
+
+        <!-- Torso (beige / yellow t-shirt) -->
+        <rect x="136" y="227" width="40" height="38" rx="3" fill="#E8C878"/>
+        <path d="M152 231 Q162 238 172 231" stroke="#d4b060" stroke-width="1.5" fill="none" opacity="0.4"/>
+
+        <!-- Watch on left wrist -->
+        <rect x="121" y="245" width="16" height="5" rx="2" fill="#3b82f6"/>
+
+        <!-- Hip piece -->
+        <rect x="134" y="265" width="44" height="6" rx="2" fill="#596018"/>
+
+        <!-- Upper legs (olive shorts) -->
+        <rect x="136" y="271" width="18" height="18" rx="2" fill="#6B7330"/>
+        <rect x="158" y="271" width="18" height="18" rx="2" fill="#6B7330"/>
+
+        <!-- Lower legs (skin) -->
+        <rect x="136" y="289" width="18" height="8"  rx="2" fill="#C47840"/>
+        <rect x="158" y="289" width="18" height="8"  rx="2" fill="#C47840"/>
+
+        <!-- Shoes (white Adidas) -->
+        <rect x="132" y="295" width="24" height="10" rx="5" fill="#F0F0F0"/>
+        <rect x="156" y="295" width="24" height="10" rx="5" fill="#F0F0F0"/>
+        <line x1="135" y1="298" x2="152" y2="298" stroke="#ccc" stroke-width="1.5"/>
+        <line x1="135" y1="301" x2="152" y2="301" stroke="#ccc" stroke-width="1.5"/>
+        <line x1="159" y1="298" x2="176" y2="298" stroke="#ccc" stroke-width="1.5"/>
+        <line x1="159" y1="301" x2="176" y2="301" stroke="#ccc" stroke-width="1.5"/>
+      </g>
+
+      <!-- Pulsing heart between characters -->
+      <text x="230" y="270" text-anchor="middle" font-size="28" class="lego-heart">💙</text>
+
+      <!-- Floating stars decoration -->
+      <text x="96"  y="186" font-size="18" opacity="0.75">🎉</text>
+      <text x="432" y="174" font-size="18" opacity="0.75">✨</text>
+      <text x="78"  y="268" font-size="13" opacity="0.6">⭐</text>
+      <text x="448" y="256" font-size="15" opacity="0.65">🎈</text>
+
+      <!-- ═══ SABRI (center x=298, feet y=300, slightly taller) ═══ -->
+      <g class="sabri-group">
+        <!-- Long blonde hair (drawn behind head) -->
+        <rect x="279" y="168" width="38" height="88" rx="12" fill="#DEB550"/>
+        <!-- Side hair pieces hanging beside torso -->
+        <rect x="277" y="208" width="10" height="56" rx="6" fill="#DEB550"/>
+        <rect x="317" y="208" width="10" height="56" rx="6" fill="#DEB550"/>
+        <!-- Hair wave detail -->
+        <path d="M279 235 Q273 252 279 268 Q273 282 279 292" stroke="#c09a30" stroke-width="2" fill="none" opacity="0.4"/>
+        <path d="M325 235 Q331 252 325 268 Q331 282 325 292" stroke="#c09a30" stroke-width="2" fill="none" opacity="0.4"/>
+
+        <!-- Head stud -->
+        <ellipse cx="298" cy="170" rx="9" ry="5" fill="#F2C4A2"/>
+
+        <!-- Head -->
+        <rect x="280" y="173" width="36" height="34" rx="6" fill="#F2C4A2"/>
+
+        <!-- Eyebrows (lighter) -->
+        <path d="M286 183 Q290 180 294 183" stroke="#8B6414" stroke-width="1.3" fill="none"/>
+        <path d="M302 183 Q306 180 310 183" stroke="#8B6414" stroke-width="1.3" fill="none"/>
+        <!-- Eyes (blue) -->
+        <ellipse cx="290" cy="190" rx="3.8" ry="3.8" fill="white"/>
+        <ellipse cx="306" cy="190" rx="3.8" ry="3.8" fill="white"/>
+        <circle  cx="291" cy="191" r="2.3" fill="#2a4a80"/>
+        <circle  cx="307" cy="191" r="2.3" fill="#2a4a80"/>
+        <circle  cx="292" cy="190" r="0.9" fill="white"/>
+        <circle  cx="308" cy="190" r="0.9" fill="white"/>
+        <!-- Big smile + teeth -->
+        <path d="M286 202 Q298 211 310 202" stroke="#1a1a1a" stroke-width="1.9" fill="none" stroke-linecap="round"/>
+        <path d="M289 202 Q298 209 307 202" fill="white" opacity="0.55"/>
+
+        <!-- Neck -->
+        <rect x="289" y="207" width="18" height="8" rx="2" fill="#F2C4A2"/>
+
+        <!-- Left arm + hand -->
+        <rect x="258" y="217" width="14" height="30" rx="5" fill="#F5F2E8"/>
+        <rect x="257" y="245" width="16" height="10" rx="4" fill="#F2C4A2"/>
+
+        <!-- Right arm + hand -->
+        <rect x="320" y="217" width="14" height="30" rx="5" fill="#F5F2E8"/>
+        <rect x="319" y="245" width="16" height="10" rx="4" fill="#F2C4A2"/>
+
+        <!-- Torso (cream blazer) -->
+        <rect x="272" y="215" width="40" height="38" rx="3" fill="#F5F2E8"/>
+        <!-- Blazer lapels -->
+        <path d="M292 219 L283 235 L292 239" stroke="#dedad2" stroke-width="1.5" fill="none"/>
+        <path d="M304 219 L313 235 L304 239" stroke="#dedad2" stroke-width="1.5" fill="none"/>
+
+        <!-- Hip piece -->
+        <rect x="270" y="253" width="44" height="6" rx="2" fill="#e8e4d8"/>
+
+        <!-- Upper legs (white shorts) -->
+        <rect x="272" y="259" width="18" height="17" rx="2" fill="#F0EEE5"/>
+        <rect x="294" y="259" width="18" height="17" rx="2" fill="#F0EEE5"/>
+
+        <!-- Lower legs (skin) -->
+        <rect x="272" y="276" width="18" height="14" rx="2" fill="#F2C4A2"/>
+        <rect x="294" y="276" width="18" height="14" rx="2" fill="#F2C4A2"/>
+
+        <!-- Shoes -->
+        <rect x="269" y="288" width="24" height="12" rx="6" fill="#F5F5F5"/>
+        <rect x="293" y="288" width="24" height="12" rx="6" fill="#F5F5F5"/>
+        <line x1="272" y1="292" x2="289" y2="292" stroke="#ddd" stroke-width="1.5"/>
+        <line x1="272" y1="296" x2="289" y2="296" stroke="#ddd" stroke-width="1.5"/>
+        <line x1="296" y1="292" x2="313" y2="292" stroke="#ddd" stroke-width="1.5"/>
+        <line x1="296" y1="296" x2="313" y2="296" stroke="#ddd" stroke-width="1.5"/>
+      </g>
+
+      <!-- Name labels -->
+      <text x="162" y="328" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">Facu 🎂</text>
+      <text x="298" y="328" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">Sabri 🩵</text>
+    </svg>
   </div>
 </section>
 
@@ -632,8 +908,9 @@ function onYes() {
     if (!animFrame) draw();
   };
 
-  // Auto-launch on load
+  // Auto-launch on load + repeat every 60 seconds
   window.addEventListener('load', () => { launchConfetti(); });
+  setInterval(launchConfetti, 60000);
 })();
 </script>
 </body>
