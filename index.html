@@ -209,6 +209,109 @@
     }
     #gala {
       background: linear-gradient(135deg, #1a1025 0%, #2d1b4e 50%, #1a1025 100%);
+      padding: 5rem 1.5rem 4rem;
+      text-align: center;
+    }
+
+    /* ── Carousel ───────────────────────────────── */
+    .carousel-wrap {
+      position: relative;
+      max-width: 520px;
+      margin: 2.5rem auto 0;
+    }
+
+    .carousel-track-outer {
+      overflow: hidden;
+      border-radius: 1.2rem;
+      box-shadow: 0 8px 40px rgba(0,0,0,0.45);
+    }
+
+    .carousel-track {
+      display: flex;
+      transition: transform 0.45s cubic-bezier(0.4,0,0.2,1);
+      align-items: flex-start;
+    }
+
+    .carousel-slide {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background: #0d0d1a;
+    }
+
+    .carousel-slide img {
+      width: 100%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      max-height: 72vh;
+    }
+
+    .carousel-caption {
+      padding: 0.85rem 1.2rem 1rem;
+      width: 100%;
+      text-align: center;
+      background: rgba(255,255,255,0.06);
+    }
+
+    .carousel-caption p {
+      font-size: 1rem;
+      font-weight: 700;
+      color: #e2d9f3;
+      margin: 0;
+      letter-spacing: 0.01em;
+    }
+
+    .carousel-btn {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background: rgba(255,255,255,0.12);
+      border: 1px solid rgba(255,255,255,0.2);
+      color: white;
+      width: 44px;
+      height: 44px;
+      border-radius: 50%;
+      font-size: 1.3rem;
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: background 0.15s;
+      z-index: 10;
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+    }
+
+    .carousel-btn:hover { background: rgba(255,255,255,0.28); }
+    .carousel-btn.prev  { left: -22px; }
+    .carousel-btn.next  { right: -22px; }
+
+    .carousel-dots {
+      display: flex;
+      justify-content: center;
+      gap: 8px;
+      margin-top: 1.2rem;
+    }
+
+    .carousel-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.3);
+      cursor: pointer;
+      transition: background 0.2s, transform 0.2s;
+    }
+
+    .carousel-dot.active {
+      background: #c084fc;
+      transform: scale(1.3);
+    }
+
+    @media (max-width: 600px) {
+      .carousel-btn.prev { left: 4px; }
+      .carousel-btn.next { right: 4px; }
     }
 
     .section-heading {
@@ -669,57 +772,45 @@
      VESTIDOS DE GALA
 ════════════════════════════════════════════ -->
 <section id="gala">
-  <div id="memorias" style="max-width:1100px;margin:0 auto;padding:5rem 1.5rem;">
-  <h2 class="section-heading">Vestidos de Gala ✨</h2>
-  <p class="section-sub">Juntos y elegantes, siempre</p>
+  <h2 class="section-heading" style="color:#e2d9f3;">Vestidos de Gala ✨</h2>
+  <p class="section-sub" style="color:#9d7ec9;">Juntos y elegantes, siempre</p>
 
-  <div class="memory-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2rem;display:grid;margin-top:2.5rem;">
+  <div class="carousel-wrap" id="galaCarousel">
+    <div class="carousel-track-outer">
+      <div class="carousel-track" id="galaTrack">
 
-    <div class="memory-card">
-      <div class="memory-img-wrap">
-        <img src="fotos/gala1.jpg" alt="Vestidos de gala 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <span class="placeholder" style="display:none">🥂</span>
-      </div>
-      <div class="memory-body">
-        <p class="memory-title">Verde y elegante</p>
-        <p class="memory-text">Ese vestido verde lima que te queda espectacular 💛</p>
+        <div class="carousel-slide">
+          <img src="fotos/gala1.jpg" alt="Verde y elegante">
+          <div class="carousel-caption"><p>Verde y elegante</p></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="fotos/gala2.jpg" alt="Rojo pasión">
+          <div class="carousel-caption"><p>Rojo pasión</p></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="fotos/gala3.jpg" alt="Entre viñedos">
+          <div class="carousel-caption"><p>Entre viñedos</p></div>
+        </div>
+
+        <div class="carousel-slide">
+          <img src="fotos/gala4.jpg" alt="Marrón y hermosa">
+          <div class="carousel-caption"><p>Marrón y hermosa</p></div>
+        </div>
+
       </div>
     </div>
 
-    <div class="memory-card">
-      <div class="memory-img-wrap">
-        <img src="fotos/gala2.jpg" alt="Vestidos de gala 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <span class="placeholder" style="display:none">🍷</span>
-      </div>
-      <div class="memory-body">
-        <p class="memory-title">Rojo pasión</p>
-        <p class="memory-text">De rojo y con un Aperol en la mano — imbatible 🔴</p>
-      </div>
-    </div>
+    <button class="carousel-btn prev" onclick="galaMove(-1)" aria-label="Anterior">&#8592;</button>
+    <button class="carousel-btn next" onclick="galaMove(1)"  aria-label="Siguiente">&#8594;</button>
 
-    <div class="memory-card">
-      <div class="memory-img-wrap">
-        <img src="fotos/gala3.jpg" alt="Vestidos de gala 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <span class="placeholder" style="display:none">🌿</span>
-      </div>
-      <div class="memory-body">
-        <p class="memory-title">Entre viñedos</p>
-        <p class="memory-text">Amarillo y Mendoza, la combinación perfecta 🍇</p>
-      </div>
+    <div class="carousel-dots" id="galaDots">
+      <span class="carousel-dot active" onclick="galaGoTo(0)"></span>
+      <span class="carousel-dot"        onclick="galaGoTo(1)"></span>
+      <span class="carousel-dot"        onclick="galaGoTo(2)"></span>
+      <span class="carousel-dot"        onclick="galaGoTo(3)"></span>
     </div>
-
-    <div class="memory-card">
-      <div class="memory-img-wrap">
-        <img src="fotos/gala4.jpg" alt="Vestidos de gala 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
-        <span class="placeholder" style="display:none">🌸</span>
-      </div>
-      <div class="memory-body">
-        <p class="memory-title">Marrón y hermosa</p>
-        <p class="memory-text">En el jardín, ese vestido marrón te quedaba divino 🌳</p>
-      </div>
-    </div>
-
-  </div>
   </div>
 </section>
 
@@ -999,6 +1090,39 @@ function onYes() {
   // Auto-launch on load + repeat every 60 seconds
   window.addEventListener('load', () => { launchConfetti(); });
   setInterval(launchConfetti, 60000);
+})();
+
+/* ═══════════════════════════════════════════
+   Gala Carousel
+═══════════════════════════════════════════ */
+(function () {
+  let current = 0;
+  const track  = document.getElementById('galaTrack');
+  const dots   = document.querySelectorAll('#galaDots .carousel-dot');
+  const total  = dots.length;
+
+  function updateDots() {
+    dots.forEach((d, i) => d.classList.toggle('active', i === current));
+  }
+
+  window.galaGoTo = function (idx) {
+    current = (idx + total) % total;
+    track.style.transform = `translateX(-${current * 100}%)`;
+    updateDots();
+  };
+
+  window.galaMove = function (dir) {
+    galaGoTo(current + dir);
+  };
+
+  // Swipe support
+  let startX = 0;
+  const outer = document.querySelector('.carousel-track-outer');
+  outer.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+  outer.addEventListener('touchend',   e => {
+    const dx = e.changedTouches[0].clientX - startX;
+    if (Math.abs(dx) > 40) galaMove(dx < 0 ? 1 : -1);
+  }, { passive: true });
 })();
 </script>
 </body>
