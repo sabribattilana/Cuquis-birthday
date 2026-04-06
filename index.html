@@ -207,17 +207,11 @@
       max-width: 1100px;
       margin: 0 auto;
     }
-    #gala {
-      background: linear-gradient(135deg, #1a1025 0%, #2d1b4e 50%, #1a1025 100%);
-      padding: 5rem 1.5rem 4rem;
-      text-align: center;
-    }
-
     /* ── Carousel ───────────────────────────────── */
     .carousel-wrap {
       position: relative;
-      max-width: 520px;
-      margin: 2.5rem auto 0;
+      max-width: 420px;
+      margin: 1.5rem 0 0;
     }
 
     .carousel-track-outer {
@@ -769,58 +763,55 @@
 </section>
 
 <!-- ════════════════════════════════════════════
-     VESTIDOS DE GALA
-════════════════════════════════════════════ -->
-<section id="gala">
-  <h2 class="section-heading" style="color:#e2d9f3;">Vestidos de Gala ✨</h2>
-  <p class="section-sub" style="color:#9d7ec9;">Juntos y elegantes, siempre</p>
-
-  <div class="carousel-wrap" id="galaCarousel">
-    <div class="carousel-track-outer">
-      <div class="carousel-track" id="galaTrack">
-
-        <div class="carousel-slide">
-          <img src="fotos/gala1.jpg" alt="Verde y elegante">
-          <div class="carousel-caption"><p>Verde y elegante</p></div>
-        </div>
-
-        <div class="carousel-slide">
-          <img src="fotos/gala2.jpg" alt="Rojo pasión">
-          <div class="carousel-caption"><p>Rojo pasión</p></div>
-        </div>
-
-        <div class="carousel-slide">
-          <img src="fotos/gala3.jpg" alt="Entre viñedos">
-          <div class="carousel-caption"><p>Entre viñedos</p></div>
-        </div>
-
-        <div class="carousel-slide">
-          <img src="fotos/gala4.jpg" alt="Marrón y hermosa">
-          <div class="carousel-caption"><p>Marrón y hermosa</p></div>
-        </div>
-
-      </div>
-    </div>
-
-    <button class="carousel-btn prev" onclick="galaMove(-1)" aria-label="Anterior">&#8592;</button>
-    <button class="carousel-btn next" onclick="galaMove(1)"  aria-label="Siguiente">&#8594;</button>
-
-    <div class="carousel-dots" id="galaDots">
-      <span class="carousel-dot active" onclick="galaGoTo(0)"></span>
-      <span class="carousel-dot"        onclick="galaGoTo(1)"></span>
-      <span class="carousel-dot"        onclick="galaGoTo(2)"></span>
-      <span class="carousel-dot"        onclick="galaGoTo(3)"></span>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════════════════════════════════════
      MEMORIES
 ════════════════════════════════════════════ -->
 <section id="memorias-section">
   <div style="max-width:1100px;margin:0 auto;padding:5rem 1.5rem;">
   <h2 class="section-heading">Nuestros Recuerdos 🩵</h2>
   <p class="section-sub">Casi 6 años de pura magia juntos</p>
+
+  <!-- ── VESTIDOS DE GALA ── -->
+  <div class="category">
+    <h3 class="category-title">✨ Vestidos de Gala</h3>
+
+    <div class="carousel-wrap" id="galaCarousel">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="galaTrack">
+
+          <div class="carousel-slide">
+            <img src="fotos/gala1.jpg" alt="Verde y elegante">
+            <div class="carousel-caption"><p>Verde y elegante</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/gala2.jpg" alt="Rojo pasión">
+            <div class="carousel-caption"><p>Rojo pasión</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/gala3.jpg" alt="Entre viñedos">
+            <div class="carousel-caption"><p>Entre viñedos</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/gala4.jpg" alt="Marrón y hermosa">
+            <div class="carousel-caption"><p>Marrón y hermosa</p></div>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="carousel-btn prev" onclick="galaMove(-1)" aria-label="Anterior">&#8592;</button>
+      <button class="carousel-btn next" onclick="galaMove(1)"  aria-label="Siguiente">&#8594;</button>
+
+      <div class="carousel-dots" id="galaDots">
+        <span class="carousel-dot active" onclick="galaGoTo(0)"></span>
+        <span class="carousel-dot"        onclick="galaGoTo(1)"></span>
+        <span class="carousel-dot"        onclick="galaGoTo(2)"></span>
+        <span class="carousel-dot"        onclick="galaGoTo(3)"></span>
+      </div>
+    </div>
+  </div>
 
   <!-- ── VIAJES ── -->
   <div class="category">
