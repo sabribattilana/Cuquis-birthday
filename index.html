@@ -332,20 +332,23 @@
       50%       { transform: scale(1.25); }
     }
 
-    /* ── Nosotros / LEGO section ────────────────── */
+    /* ── Nosotros / Minecraft section ───────────── */
     #nosotros {
       padding: 4rem 1.5rem 3rem;
-      background: linear-gradient(to bottom, #e8f4ff, #f0f6ff);
+      background: #1C2C1A;
       text-align: center;
     }
+    #nosotros .section-heading { color: #F5F0E8; }
+    #nosotros .section-sub     { color: #9DC08B; }
     .lego-scene-container {
       max-width: 540px;
       margin: 0 auto;
-      border-radius: 1.5rem;
+      border-radius: 0;
       overflow: hidden;
-      box-shadow: 0 8px 40px rgba(30, 64, 175, 0.18);
+      box-shadow: 0 0 0 4px #3A5A30, 0 0 0 8px #2A4220, 0 12px 48px rgba(0,0,0,0.5);
+      image-rendering: pixelated;
     }
-    .lego-svg { width: 100%; height: auto; display: block; }
+    .lego-svg { width: 100%; height: auto; display: block; image-rendering: pixelated; }
 
     .facu-group {
       animation: legoSway 2.2s ease-in-out infinite alternate;
@@ -405,234 +408,256 @@
 </section>
 
 <!-- ════════════════════════════════════════════
-     NOSOTROS / LEGO
+     NOSOTROS / MINECRAFT
 ════════════════════════════════════════════ -->
 <section id="nosotros">
   <h2 class="section-heading">Nosotros 🩵</h2>
-  <p class="section-sub">Versión LEGO, misma vibra</p>
+  <p class="section-sub">Versión Minecraft, misma vibra</p>
   <div class="lego-scene-container">
-    <svg viewBox="0 0 500 365" xmlns="http://www.w3.org/2000/svg" class="lego-svg">
-      <defs>
-        <linearGradient id="g-sky" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#0d1b3e"/>
-          <stop offset="38%"  stop-color="#b84e18"/>
-          <stop offset="62%"  stop-color="#f09030"/>
-          <stop offset="100%" stop-color="#f5c040"/>
-        </linearGradient>
-        <linearGradient id="g-water" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#1a3880"/>
-          <stop offset="100%" stop-color="#2a58b0"/>
-        </linearGradient>
-        <linearGradient id="g-ground" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%"   stop-color="#d8c8a0"/>
-          <stop offset="100%" stop-color="#c4b48c"/>
-        </linearGradient>
-      </defs>
+    <svg viewBox="0 0 500 340" xmlns="http://www.w3.org/2000/svg" class="lego-svg" shape-rendering="crispEdges">
 
-      <!-- Sky -->
-      <rect width="500" height="365" fill="url(#g-sky)"/>
+      <!-- SKY -->
+      <rect x="0" y="0" width="500" height="272" fill="#78B4E8"/>
 
-      <!-- Sun glow layers -->
-      <circle cx="368" cy="218" r="68" fill="#FFD700" opacity="0.1"/>
-      <circle cx="368" cy="218" r="44" fill="#FFD700" opacity="0.2"/>
-      <circle cx="368" cy="218" r="26" fill="#FFD700" opacity="0.88"/>
-      <ellipse cx="368" cy="248" rx="85" ry="10" fill="#FFD700" opacity="0.22"/>
+      <!-- SUN -->
+      <rect x="398" y="28" width="48" height="48" fill="#FFD700"/>
+      <rect x="406" y="36" width="32" height="32" fill="#FFE840"/>
+      <rect x="414" y="16" width="16" height="12" fill="#FFD700"/>
+      <rect x="454" y="36" width="12" height="16" fill="#FFD700"/>
+      <rect x="454" y="52" width="12" height="16" fill="#FFD700"/>
+      <rect x="414" y="76" width="16" height="12" fill="#FFD700"/>
+      <rect x="386" y="36" width="12" height="16" fill="#FFD700"/>
+      <rect x="386" y="52" width="12" height="16" fill="#FFD700"/>
 
-      <!-- Left palm tree silhouette -->
-      <rect x="64" y="152" width="7" height="108" rx="3" fill="#090e1c" opacity="0.8"/>
-      <ellipse cx="67" cy="157" rx="36" ry="14" fill="#090e1c" opacity="0.8" transform="rotate(-22 67 157)"/>
-      <ellipse cx="67" cy="160" rx="30" ry="12" fill="#090e1c" opacity="0.8" transform="rotate(16 67 160)"/>
-      <ellipse cx="67" cy="154" rx="28" ry="11" fill="#090e1c" opacity="0.8" transform="rotate(-40 67 154)"/>
+      <!-- CLOUD 1 -->
+      <rect x="36"  y="48" width="80" height="24" fill="white"/>
+      <rect x="52"  y="32" width="48" height="24" fill="white"/>
+      <rect x="60"  y="24" width="32" height="16" fill="white"/>
+      <rect x="36"  y="68" width="80" height="8"  fill="#D0D0D0"/>
 
-      <!-- Right palm tree silhouette -->
-      <rect x="416" y="134" width="7" height="126" rx="3" fill="#090e1c" opacity="0.8"/>
-      <ellipse cx="419" cy="139" rx="40" ry="14" fill="#090e1c" opacity="0.8" transform="rotate(-16 419 139)"/>
-      <ellipse cx="419" cy="143" rx="34" ry="12" fill="#090e1c" opacity="0.8" transform="rotate(22 419 143)"/>
-      <ellipse cx="419" cy="136" rx="30" ry="11" fill="#090e1c" opacity="0.8" transform="rotate(-38 419 136)"/>
+      <!-- CLOUD 2 -->
+      <rect x="204" y="44" width="72" height="24" fill="white"/>
+      <rect x="220" y="28" width="40" height="24" fill="white"/>
+      <rect x="204" y="60" width="72" height="8"  fill="#D0D0D0"/>
 
-      <!-- Center-back palm -->
-      <rect x="320" y="162" width="6" height="98" rx="2" fill="#090e1c" opacity="0.5"/>
-      <ellipse cx="323" cy="167" rx="30" ry="12" fill="#090e1c" opacity="0.5" transform="rotate(-12 323 167)"/>
-      <ellipse cx="323" cy="170" rx="26" ry="10" fill="#090e1c" opacity="0.5" transform="rotate(26 323 170)"/>
+      <!-- LEFT TREE -->
+      <rect x="54"  y="180" width="12" height="88"  fill="#6D4C1F"/>
+      <rect x="28"  y="144" width="64" height="52"  fill="#2E6017"/>
+      <rect x="20"  y="160" width="16" height="36"  fill="#2E6017"/>
+      <rect x="76"  y="160" width="16" height="36"  fill="#2E6017"/>
+      <rect x="36"  y="120" width="48" height="32"  fill="#2E6017"/>
+      <rect x="44"  y="104" width="32" height="24"  fill="#2E6017"/>
+      <rect x="36"  y="148" width="8"  height="8"   fill="#3D7A20"/>
+      <rect x="60"  y="128" width="8"  height="8"   fill="#3D7A20"/>
+      <rect x="76"  y="160" width="8"  height="8"   fill="#1E4A0E"/>
 
-      <!-- Water / pool -->
-      <rect x="0" y="248" width="500" height="52" fill="url(#g-water)" opacity="0.9"/>
-      <ellipse cx="368" cy="254" rx="18" ry="24" fill="#FFD700" opacity="0.28"/>
-      <line x1="28"  y1="262" x2="130" y2="262" stroke="white" stroke-width="1.5" opacity="0.13"/>
-      <line x1="186" y1="274" x2="268" y2="274" stroke="white" stroke-width="1.5" opacity="0.11"/>
-      <line x1="402" y1="260" x2="462" y2="260" stroke="white" stroke-width="1.5" opacity="0.13"/>
+      <!-- RIGHT TREE -->
+      <rect x="434" y="180" width="12" height="88"  fill="#6D4C1F"/>
+      <rect x="408" y="144" width="64" height="52"  fill="#2E6017"/>
+      <rect x="400" y="160" width="16" height="36"  fill="#2E6017"/>
+      <rect x="456" y="160" width="16" height="36"  fill="#2E6017"/>
+      <rect x="416" y="120" width="48" height="32"  fill="#2E6017"/>
+      <rect x="424" y="104" width="32" height="24"  fill="#2E6017"/>
+      <rect x="416" y="148" width="8"  height="8"   fill="#3D7A20"/>
+      <rect x="440" y="128" width="8"  height="8"   fill="#3D7A20"/>
 
-      <!-- Pool border -->
-      <rect x="0" y="297" width="500" height="6" fill="#c0b090"/>
+      <!-- GRASS -->
+      <rect x="0"   y="272" width="500" height="16" fill="#5CB83A"/>
+      <rect x="0"   y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="16"  y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="48"  y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="80"  y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="128" y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="176" y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="224" y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="272" y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="320" y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="368" y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="416" y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="464" y="272" width="8"   height="8"  fill="#72CC4C"/>
+      <rect x="0"   y="284" width="500" height="4"  fill="#4A9A2A"/>
 
-      <!-- Ground / tiles -->
-      <rect x="0" y="300" width="500" height="65" fill="url(#g-ground)"/>
-      <line x1="0" y1="316" x2="500" y2="316" stroke="#b0a078" stroke-width="0.7"/>
-      <line x1="0" y1="332" x2="500" y2="332" stroke="#b0a078" stroke-width="0.7"/>
-      <line x1="0" y1="348" x2="500" y2="348" stroke="#b0a078" stroke-width="0.7"/>
-      <line x1="72"  y1="300" x2="72"  y2="365" stroke="#b0a078" stroke-width="0.7"/>
-      <line x1="144" y1="300" x2="144" y2="365" stroke="#b0a078" stroke-width="0.7"/>
-      <line x1="216" y1="300" x2="216" y2="365" stroke="#b0a078" stroke-width="0.7"/>
-      <line x1="288" y1="300" x2="288" y2="365" stroke="#b0a078" stroke-width="0.7"/>
-      <line x1="360" y1="300" x2="360" y2="365" stroke="#b0a078" stroke-width="0.7"/>
-      <line x1="432" y1="300" x2="432" y2="365" stroke="#b0a078" stroke-width="0.7"/>
+      <!-- DIRT (alternating block pattern) -->
+      <rect x="0"   y="288" width="500" height="52" fill="#8B6347"/>
+      <rect x="0"   y="288" width="32"  height="16" fill="#9B7357"/>
+      <rect x="64"  y="288" width="32"  height="16" fill="#9B7357"/>
+      <rect x="128" y="288" width="32"  height="16" fill="#9B7357"/>
+      <rect x="192" y="288" width="32"  height="16" fill="#9B7357"/>
+      <rect x="256" y="288" width="32"  height="16" fill="#9B7357"/>
+      <rect x="320" y="288" width="32"  height="16" fill="#9B7357"/>
+      <rect x="384" y="288" width="32"  height="16" fill="#9B7357"/>
+      <rect x="448" y="288" width="32"  height="16" fill="#9B7357"/>
+      <rect x="32"  y="288" width="32"  height="16" fill="#7B5337"/>
+      <rect x="96"  y="288" width="32"  height="16" fill="#7B5337"/>
+      <rect x="160" y="288" width="32"  height="16" fill="#7B5337"/>
+      <rect x="224" y="288" width="32"  height="16" fill="#7B5337"/>
+      <rect x="288" y="288" width="32"  height="16" fill="#7B5337"/>
+      <rect x="352" y="288" width="32"  height="16" fill="#7B5337"/>
+      <rect x="416" y="288" width="32"  height="16" fill="#7B5337"/>
+      <rect x="480" y="288" width="20"  height="16" fill="#7B5337"/>
+      <rect x="16"  y="304" width="32"  height="16" fill="#9B7357"/>
+      <rect x="80"  y="304" width="32"  height="16" fill="#9B7357"/>
+      <rect x="144" y="304" width="32"  height="16" fill="#9B7357"/>
+      <rect x="208" y="304" width="32"  height="16" fill="#9B7357"/>
+      <rect x="272" y="304" width="32"  height="16" fill="#9B7357"/>
+      <rect x="336" y="304" width="32"  height="16" fill="#9B7357"/>
+      <rect x="400" y="304" width="32"  height="16" fill="#9B7357"/>
+      <rect x="464" y="304" width="36"  height="16" fill="#9B7357"/>
+      <rect x="0"   y="304" width="16"  height="16" fill="#7B5337"/>
+      <rect x="48"  y="304" width="32"  height="16" fill="#7B5337"/>
+      <rect x="112" y="304" width="32"  height="16" fill="#7B5337"/>
+      <rect x="176" y="304" width="32"  height="16" fill="#7B5337"/>
+      <rect x="240" y="304" width="32"  height="16" fill="#7B5337"/>
+      <rect x="304" y="304" width="32"  height="16" fill="#7B5337"/>
+      <rect x="368" y="304" width="32"  height="16" fill="#7B5337"/>
+      <rect x="432" y="304" width="32"  height="16" fill="#7B5337"/>
+      <rect x="0"   y="320" width="32"  height="20" fill="#9B7357"/>
+      <rect x="64"  y="320" width="32"  height="20" fill="#9B7357"/>
+      <rect x="128" y="320" width="32"  height="20" fill="#9B7357"/>
+      <rect x="192" y="320" width="32"  height="20" fill="#9B7357"/>
+      <rect x="256" y="320" width="32"  height="20" fill="#9B7357"/>
+      <rect x="320" y="320" width="32"  height="20" fill="#9B7357"/>
+      <rect x="384" y="320" width="32"  height="20" fill="#9B7357"/>
+      <rect x="448" y="320" width="32"  height="20" fill="#9B7357"/>
+      <rect x="32"  y="320" width="32"  height="20" fill="#7B5337"/>
+      <rect x="96"  y="320" width="32"  height="20" fill="#7B5337"/>
+      <rect x="160" y="320" width="32"  height="20" fill="#7B5337"/>
+      <rect x="224" y="320" width="32"  height="20" fill="#7B5337"/>
+      <rect x="288" y="320" width="32"  height="20" fill="#7B5337"/>
+      <rect x="352" y="320" width="32"  height="20" fill="#7B5337"/>
+      <rect x="416" y="320" width="32"  height="20" fill="#7B5337"/>
+      <rect x="480" y="320" width="20"  height="20" fill="#7B5337"/>
 
-      <!-- Shadows -->
-      <ellipse cx="162" cy="302" rx="26" ry="4" fill="#000" opacity="0.16"/>
-      <ellipse cx="298" cy="302" rx="26" ry="4" fill="#000" opacity="0.16"/>
+      <!-- shadows -->
+      <rect x="130" y="269" width="52"  height="8"  fill="#1A5010" opacity="0.2"/>
+      <rect x="308" y="269" width="62"  height="8"  fill="#1A5010" opacity="0.2"/>
 
-      <!-- ═══ FACU (center x=162, feet y=300) ═══ -->
+      <!-- ═══ FACU (center x=156, feet y=272) ═══ -->
       <g class="facu-group">
-        <!-- Birthday hat (behind stud) -->
-        <polygon points="162,144 138,188 186,188" fill="#2563eb"/>
-        <polygon points="162,144 145,186 154,186" fill="#60a5fa" opacity="0.45"/>
-        <rect x="138" y="181" width="48" height="7" rx="2" fill="#1d4ed8"/>
-        <circle cx="162" cy="140" r="7" fill="#fbbf24"/>
-        <text x="162" y="143.5" text-anchor="middle" font-size="7" fill="#1a3a8a" font-weight="900">★</text>
-
-        <!-- Dark short hair (behind head top) -->
-        <rect x="141" y="183" width="42" height="20" rx="9" fill="#181818"/>
-
-        <!-- Head stud -->
-        <ellipse cx="162" cy="182" rx="9" ry="5" fill="#C47840"/>
-
-        <!-- Head -->
-        <rect x="143" y="185" width="38" height="34" rx="6" fill="#C47840"/>
-
-        <!-- Eyebrows -->
-        <path d="M149 195 Q153 192 158 195" stroke="#1a1a1a" stroke-width="1.6" fill="none"/>
-        <path d="M166 195 Q171 192 175 195" stroke="#1a1a1a" stroke-width="1.6" fill="none"/>
-        <!-- Eyes -->
-        <ellipse cx="153" cy="201" rx="3.8" ry="3.8" fill="white"/>
-        <ellipse cx="171" cy="201" rx="3.8" ry="3.8" fill="white"/>
-        <circle  cx="154" cy="202" r="2.3" fill="#120904"/>
-        <circle  cx="172" cy="202" r="2.3" fill="#120904"/>
-        <circle  cx="155" cy="201" r="0.9" fill="white"/>
-        <circle  cx="173" cy="201" r="0.9" fill="white"/>
-        <!-- Smile + teeth -->
-        <path d="M150 213 Q162 221 174 213" stroke="#1a1a1a" stroke-width="2" fill="none" stroke-linecap="round"/>
-        <path d="M153 213 Q162 219 171 213" fill="white" opacity="0.55"/>
-
-        <!-- Neck -->
-        <rect x="153" y="219" width="18" height="8" rx="2" fill="#C47840"/>
-
-        <!-- Left arm + hand -->
-        <rect x="122" y="227" width="14" height="28" rx="5" fill="#E8C878"/>
-        <rect x="121" y="253" width="16" height="10" rx="4" fill="#C47840"/>
-
-        <!-- Right arm raised (waving) -->
-        <g transform="rotate(-48 177 229)">
-          <rect x="176" y="227" width="14" height="28" rx="5" fill="#E8C878"/>
-          <rect x="175" y="253" width="16" height="10" rx="4" fill="#C47840"/>
-        </g>
-
-        <!-- Torso (beige / yellow t-shirt) -->
-        <rect x="136" y="227" width="40" height="38" rx="3" fill="#E8C878"/>
-        <path d="M152 231 Q162 238 172 231" stroke="#d4b060" stroke-width="1.5" fill="none" opacity="0.4"/>
-
-        <!-- Watch on left wrist -->
-        <rect x="121" y="245" width="16" height="5" rx="2" fill="#3b82f6"/>
-
-        <!-- Hip piece -->
-        <rect x="134" y="265" width="44" height="6" rx="2" fill="#596018"/>
-
-        <!-- Upper legs (olive shorts) -->
-        <rect x="136" y="271" width="18" height="18" rx="2" fill="#6B7330"/>
-        <rect x="158" y="271" width="18" height="18" rx="2" fill="#6B7330"/>
-
-        <!-- Lower legs (skin) -->
-        <rect x="136" y="289" width="18" height="8"  rx="2" fill="#C47840"/>
-        <rect x="158" y="289" width="18" height="8"  rx="2" fill="#C47840"/>
-
-        <!-- Shoes (white Adidas) -->
-        <rect x="132" y="295" width="24" height="10" rx="5" fill="#F0F0F0"/>
-        <rect x="156" y="295" width="24" height="10" rx="5" fill="#F0F0F0"/>
-        <line x1="135" y1="298" x2="152" y2="298" stroke="#ccc" stroke-width="1.5"/>
-        <line x1="135" y1="301" x2="152" y2="301" stroke="#ccc" stroke-width="1.5"/>
-        <line x1="159" y1="298" x2="176" y2="298" stroke="#ccc" stroke-width="1.5"/>
-        <line x1="159" y1="301" x2="176" y2="301" stroke="#ccc" stroke-width="1.5"/>
+        <!-- birthday hat -->
+        <rect x="150" y="136" width="12" height="8"  fill="#2563eb"/>
+        <rect x="146" y="144" width="20" height="8"  fill="#2563eb"/>
+        <rect x="140" y="152" width="32" height="8"  fill="#1d4ed8"/>
+        <rect x="134" y="160" width="44" height="6"  fill="#1a43b8"/>
+        <rect x="152" y="128" width="8"  height="8"  fill="#FFDD00"/>
+        <rect x="154" y="124" width="4"  height="4"  fill="#FFDD00"/>
+        <!-- head -->
+        <rect x="136" y="164" width="40" height="40" fill="#C68A38"/>
+        <rect x="136" y="164" width="40" height="14" fill="#1A0800"/>
+        <rect x="132" y="176" width="4"  height="8"  fill="#B57A30"/>
+        <rect x="176" y="176" width="4"  height="8"  fill="#B57A30"/>
+        <rect x="142" y="180" width="10" height="3"  fill="#1A0800"/>
+        <rect x="160" y="180" width="10" height="3"  fill="#1A0800"/>
+        <rect x="143" y="183" width="8"  height="8"  fill="white"/>
+        <rect x="161" y="183" width="8"  height="8"  fill="white"/>
+        <rect x="145" y="185" width="4"  height="4"  fill="#111111"/>
+        <rect x="163" y="185" width="4"  height="4"  fill="#111111"/>
+        <rect x="153" y="193" width="6"  height="4"  fill="#B57A30"/>
+        <rect x="142" y="199" width="6"  height="4"  fill="#1A0800"/>
+        <rect x="148" y="203" width="16" height="4"  fill="#1A0800"/>
+        <rect x="164" y="199" width="6"  height="4"  fill="#1A0800"/>
+        <rect x="148" y="199" width="8"  height="4"  fill="white"/>
+        <rect x="156" y="199" width="8"  height="4"  fill="white"/>
+        <!-- body -->
+        <rect x="138" y="204" width="36" height="40" fill="#3B82F6"/>
+        <rect x="138" y="204" width="8"  height="40" fill="#2563EB"/>
+        <rect x="166" y="204" width="8"  height="40" fill="#2563EB"/>
+        <rect x="153" y="204" width="6"  height="40" fill="#2563EB"/>
+        <!-- left arm -->
+        <rect x="120" y="204" width="18" height="32" fill="#3B82F6"/>
+        <rect x="120" y="236" width="18" height="8"  fill="#C68A38"/>
+        <rect x="120" y="204" width="4"  height="40" fill="#2563EB"/>
+        <!-- right arm (slightly raised) -->
+        <rect x="174" y="200" width="18" height="32" fill="#3B82F6"/>
+        <rect x="174" y="232" width="18" height="8"  fill="#C68A38"/>
+        <rect x="188" y="200" width="4"  height="40" fill="#2563EB"/>
+        <!-- waistband -->
+        <rect x="138" y="244" width="36" height="6"  fill="#1E3A5F"/>
+        <!-- legs -->
+        <rect x="138" y="250" width="17" height="12" fill="#2D4B72"/>
+        <rect x="138" y="262" width="17" height="6"  fill="#C68A38"/>
+        <rect x="134" y="268" width="23" height="6"  fill="#F0F0F0"/>
+        <rect x="155" y="250" width="17" height="12" fill="#2D4B72"/>
+        <rect x="155" y="262" width="17" height="6"  fill="#C68A38"/>
+        <rect x="153" y="268" width="23" height="6"  fill="#F0F0F0"/>
       </g>
 
-      <!-- Pulsing heart between characters -->
-      <text x="230" y="270" text-anchor="middle" font-size="28" class="lego-heart">💙</text>
+      <!-- pixel heart (between characters, chest level) -->
+      <g class="lego-heart">
+        <rect x="225" y="195" width="16" height="8"  fill="#E74C8B"/>
+        <rect x="249" y="195" width="16" height="8"  fill="#E74C8B"/>
+        <rect x="217" y="203" width="56" height="8"  fill="#E74C8B"/>
+        <rect x="217" y="211" width="56" height="8"  fill="#E74C8B"/>
+        <rect x="225" y="219" width="40" height="8"  fill="#E74C8B"/>
+        <rect x="233" y="227" width="24" height="8"  fill="#E74C8B"/>
+        <rect x="241" y="235" width="8"  height="8"  fill="#E74C8B"/>
+        <rect x="225" y="197" width="8"  height="4"  fill="#FF80BF"/>
+        <rect x="249" y="197" width="8"  height="4"  fill="#FF80BF"/>
+      </g>
 
-      <!-- Floating stars decoration -->
-      <text x="96"  y="186" font-size="18" opacity="0.75">🎉</text>
-      <text x="432" y="174" font-size="18" opacity="0.75">✨</text>
-      <text x="78"  y="268" font-size="13" opacity="0.6">⭐</text>
-      <text x="448" y="256" font-size="15" opacity="0.65">🎈</text>
+      <!-- pixel sparkles -->
+      <rect x="100" y="224" width="8" height="8" fill="#FFD700" opacity="0.9"/>
+      <rect x="108" y="216" width="8" height="8" fill="#FFD700" opacity="0.9"/>
+      <rect x="100" y="208" width="8" height="8" fill="#FFD700" opacity="0.9"/>
+      <rect x="92"  y="216" width="8" height="8" fill="#FFD700" opacity="0.9"/>
+      <rect x="392" y="224" width="8" height="8" fill="#FFD700" opacity="0.9"/>
+      <rect x="400" y="216" width="8" height="8" fill="#FFD700" opacity="0.9"/>
+      <rect x="392" y="208" width="8" height="8" fill="#FFD700" opacity="0.9"/>
+      <rect x="384" y="216" width="8" height="8" fill="#FFD700" opacity="0.9"/>
 
-      <!-- ═══ SABRI (center x=298, feet y=300, slightly taller) ═══ -->
+      <!-- ═══ SABRI (center x=334, feet y=272) ═══ -->
       <g class="sabri-group">
-        <!-- Long blonde hair (drawn behind head) -->
-        <rect x="279" y="168" width="38" height="88" rx="12" fill="#DEB550"/>
-        <!-- Side hair pieces hanging beside torso -->
-        <rect x="277" y="208" width="10" height="56" rx="6" fill="#DEB550"/>
-        <rect x="317" y="208" width="10" height="56" rx="6" fill="#DEB550"/>
-        <!-- Hair wave detail -->
-        <path d="M279 235 Q273 252 279 268 Q273 282 279 292" stroke="#c09a30" stroke-width="2" fill="none" opacity="0.4"/>
-        <path d="M325 235 Q331 252 325 268 Q331 282 325 292" stroke="#c09a30" stroke-width="2" fill="none" opacity="0.4"/>
-
-        <!-- Head stud -->
-        <ellipse cx="298" cy="170" rx="9" ry="5" fill="#F2C4A2"/>
-
-        <!-- Head -->
-        <rect x="280" y="173" width="36" height="34" rx="6" fill="#F2C4A2"/>
-
-        <!-- Eyebrows (lighter) -->
-        <path d="M286 183 Q290 180 294 183" stroke="#8B6414" stroke-width="1.3" fill="none"/>
-        <path d="M302 183 Q306 180 310 183" stroke="#8B6414" stroke-width="1.3" fill="none"/>
-        <!-- Eyes (blue) -->
-        <ellipse cx="290" cy="190" rx="3.8" ry="3.8" fill="white"/>
-        <ellipse cx="306" cy="190" rx="3.8" ry="3.8" fill="white"/>
-        <circle  cx="291" cy="191" r="2.3" fill="#2a4a80"/>
-        <circle  cx="307" cy="191" r="2.3" fill="#2a4a80"/>
-        <circle  cx="292" cy="190" r="0.9" fill="white"/>
-        <circle  cx="308" cy="190" r="0.9" fill="white"/>
-        <!-- Big smile + teeth -->
-        <path d="M286 202 Q298 211 310 202" stroke="#1a1a1a" stroke-width="1.9" fill="none" stroke-linecap="round"/>
-        <path d="M289 202 Q298 209 307 202" fill="white" opacity="0.55"/>
-
-        <!-- Neck -->
-        <rect x="289" y="207" width="18" height="8" rx="2" fill="#F2C4A2"/>
-
-        <!-- Left arm + hand -->
-        <rect x="258" y="217" width="14" height="30" rx="5" fill="#F5F2E8"/>
-        <rect x="257" y="245" width="16" height="10" rx="4" fill="#F2C4A2"/>
-
-        <!-- Right arm + hand -->
-        <rect x="320" y="217" width="14" height="30" rx="5" fill="#F5F2E8"/>
-        <rect x="319" y="245" width="16" height="10" rx="4" fill="#F2C4A2"/>
-
-        <!-- Torso (cream blazer) -->
-        <rect x="272" y="215" width="40" height="38" rx="3" fill="#F5F2E8"/>
-        <!-- Blazer lapels -->
-        <path d="M292 219 L283 235 L292 239" stroke="#dedad2" stroke-width="1.5" fill="none"/>
-        <path d="M304 219 L313 235 L304 239" stroke="#dedad2" stroke-width="1.5" fill="none"/>
-
-        <!-- Hip piece -->
-        <rect x="270" y="253" width="44" height="6" rx="2" fill="#e8e4d8"/>
-
-        <!-- Upper legs (white shorts) -->
-        <rect x="272" y="259" width="18" height="17" rx="2" fill="#F0EEE5"/>
-        <rect x="294" y="259" width="18" height="17" rx="2" fill="#F0EEE5"/>
-
-        <!-- Lower legs (skin) -->
-        <rect x="272" y="276" width="18" height="14" rx="2" fill="#F2C4A2"/>
-        <rect x="294" y="276" width="18" height="14" rx="2" fill="#F2C4A2"/>
-
-        <!-- Shoes -->
-        <rect x="269" y="288" width="24" height="12" rx="6" fill="#F5F5F5"/>
-        <rect x="293" y="288" width="24" height="12" rx="6" fill="#F5F5F5"/>
-        <line x1="272" y1="292" x2="289" y2="292" stroke="#ddd" stroke-width="1.5"/>
-        <line x1="272" y1="296" x2="289" y2="296" stroke="#ddd" stroke-width="1.5"/>
-        <line x1="296" y1="292" x2="313" y2="292" stroke="#ddd" stroke-width="1.5"/>
-        <line x1="296" y1="296" x2="313" y2="296" stroke="#ddd" stroke-width="1.5"/>
+        <!-- back hair (drawn before head so it shows behind) -->
+        <rect x="306" y="164" width="56" height="78" fill="#DEB550"/>
+        <rect x="302" y="204" width="14" height="54" fill="#DEB550"/>
+        <rect x="352" y="204" width="14" height="54" fill="#DEB550"/>
+        <rect x="304" y="220" width="6"  height="8"  fill="#C8A040"/>
+        <rect x="358" y="230" width="6"  height="8"  fill="#C8A040"/>
+        <!-- head -->
+        <rect x="314" y="164" width="40" height="40" fill="#F2C49A"/>
+        <rect x="314" y="164" width="40" height="12" fill="#DEB550"/>
+        <rect x="310" y="176" width="4"  height="8"  fill="#D9A878"/>
+        <rect x="354" y="176" width="4"  height="8"  fill="#D9A878"/>
+        <rect x="320" y="180" width="10" height="3"  fill="#8B6414"/>
+        <rect x="338" y="180" width="10" height="3"  fill="#8B6414"/>
+        <rect x="321" y="183" width="8"  height="8"  fill="white"/>
+        <rect x="339" y="183" width="8"  height="8"  fill="white"/>
+        <rect x="323" y="185" width="4"  height="4"  fill="#1A5295"/>
+        <rect x="341" y="185" width="4"  height="4"  fill="#1A5295"/>
+        <rect x="331" y="193" width="6"  height="4"  fill="#D9A878"/>
+        <rect x="320" y="199" width="6"  height="4"  fill="#1A1A1A"/>
+        <rect x="326" y="203" width="16" height="4"  fill="#1A1A1A"/>
+        <rect x="342" y="199" width="6"  height="4"  fill="#1A1A1A"/>
+        <rect x="326" y="199" width="8"  height="4"  fill="white"/>
+        <rect x="334" y="199" width="8"  height="4"  fill="white"/>
+        <!-- body (cream blazer) -->
+        <rect x="316" y="204" width="36" height="40" fill="#F5F0E8"/>
+        <rect x="316" y="204" width="8"  height="40" fill="#EDE8DC"/>
+        <rect x="344" y="204" width="8"  height="40" fill="#EDE8DC"/>
+        <rect x="330" y="204" width="8"  height="40" fill="#EDE8DC"/>
+        <!-- left arm -->
+        <rect x="298" y="204" width="18" height="32" fill="#F5F0E8"/>
+        <rect x="298" y="236" width="18" height="8"  fill="#F2C49A"/>
+        <rect x="298" y="204" width="4"  height="40" fill="#EDE8DC"/>
+        <!-- right arm -->
+        <rect x="354" y="204" width="18" height="32" fill="#F5F0E8"/>
+        <rect x="354" y="236" width="18" height="8"  fill="#F2C49A"/>
+        <rect x="368" y="204" width="4"  height="40" fill="#EDE8DC"/>
+        <!-- waistband -->
+        <rect x="316" y="244" width="36" height="6"  fill="#DDD8C8"/>
+        <!-- legs -->
+        <rect x="316" y="250" width="17" height="12" fill="#EDE8DC"/>
+        <rect x="316" y="262" width="17" height="6"  fill="#F2C49A"/>
+        <rect x="312" y="268" width="23" height="6"  fill="#F0F0F0"/>
+        <rect x="335" y="250" width="17" height="12" fill="#EDE8DC"/>
+        <rect x="335" y="262" width="17" height="6"  fill="#F2C49A"/>
+        <rect x="333" y="268" width="23" height="6"  fill="#F0F0F0"/>
       </g>
 
-      <!-- Name labels -->
-      <text x="162" y="328" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">Facu 🎂</text>
-      <text x="298" y="328" text-anchor="middle" font-family="Inter,system-ui,sans-serif" font-size="13" font-weight="700" fill="#1e3a8a">Sabri 🩵</text>
+      <!-- name labels -->
+      <text x="156" y="316" text-anchor="middle" font-family="monospace,Courier New,sans-serif" font-size="12" font-weight="700" fill="#F5F0E8" letter-spacing="1">Facu &#x1F382;</text>
+      <text x="334" y="316" text-anchor="middle" font-family="monospace,Courier New,sans-serif" font-size="12" font-weight="700" fill="#F5F0E8" letter-spacing="1">Sabri &#x1F499;</text>
+
     </svg>
   </div>
 </section>
