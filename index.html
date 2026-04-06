@@ -793,6 +793,42 @@
     </div>
   </div>
 
+  <!-- ── EN FAMILIA ── -->
+  <div class="category">
+    <h3 class="category-title">👨‍👩‍👦 En familia</h3>
+
+    <div class="carousel-wrap" id="familiaCarousel">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="familiaTrack">
+
+          <div class="carousel-slide">
+            <img src="fotos/familia1.jpg" alt="Los dos galanes">
+            <div class="carousel-caption"><p>Los dos galanes 😎</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/familia2.jpg" alt="Atardecer en familia">
+            <div class="carousel-caption"><p>Atardecer en familia 🌅</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/familia3.jpg" alt="Tourbus familiar">
+            <div class="carousel-caption"><p>Tourbus familiar 🚌</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/familia4.jpg" alt="Pileta en modo sol">
+            <div class="carousel-caption"><p>Pileta en modo sol ☀️</p></div>
+          </div>
+
+        </div>
+      </div>
+
+      <button class="carousel-btn prev" onclick="familiaMove(-1)" aria-label="Anterior">&#8592;</button>
+      <button class="carousel-btn next" onclick="familiaMove(1)"  aria-label="Siguiente">&#8594;</button>
+    </div>
+  </div>
+
   <!-- ── VIAJES ── -->
   <div class="category">
     <h3 class="category-title">✈️ Viajes</h3>
@@ -1064,20 +1100,19 @@ function onYes() {
 })();
 
 /* ═══════════════════════════════════════════
-   Gala Carousel (horizontal filmstrip)
+   Generic carousel factory
 ═══════════════════════════════════════════ */
-(function () {
-  const track = document.getElementById('galaTrack');
-
-  function slideWidth() {
+function makeCarousel(trackId, moveFnName) {
+  const track = document.getElementById(trackId);
+  if (!track) return;
+  window[moveFnName] = function (dir) {
     const s = track.querySelector('.carousel-slide');
-    return s ? s.offsetWidth + 12 : 300; // width + gap
-  }
-
-  window.galaMove = function (dir) {
-    track.scrollBy({ left: dir * slideWidth(), behavior: 'smooth' });
+    const w = s ? s.offsetWidth + 12 : 300;
+    track.scrollBy({ left: dir * w, behavior: 'smooth' });
   };
-})();
+}
+makeCarousel('galaTrack',    'galaMove');
+makeCarousel('familiaTrack', 'familiaMove');
 </script>
 </body>
 </html>
