@@ -202,10 +202,13 @@
     }
 
     /* ── MEMORIES SECTION ───────────────────────── */
-    #memorias {
+    #memorias, #memorias-section {
       padding: 5rem 1.5rem;
       max-width: 1100px;
       margin: 0 auto;
+    }
+    #gala {
+      background: linear-gradient(135deg, #1a1025 0%, #2d1b4e 50%, #1a1025 100%);
     }
 
     .section-heading {
@@ -663,9 +666,68 @@
 </section>
 
 <!-- ════════════════════════════════════════════
+     VESTIDOS DE GALA
+════════════════════════════════════════════ -->
+<section id="gala">
+  <div id="memorias" style="max-width:1100px;margin:0 auto;padding:5rem 1.5rem;">
+  <h2 class="section-heading">Vestidos de Gala ✨</h2>
+  <p class="section-sub">Juntos y elegantes, siempre</p>
+
+  <div class="memory-grid" style="grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:2rem;display:grid;margin-top:2.5rem;">
+
+    <div class="memory-card">
+      <div class="memory-img-wrap">
+        <img src="fotos/gala1.jpg" alt="Vestidos de gala 1" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="placeholder" style="display:none">🥂</span>
+      </div>
+      <div class="memory-body">
+        <p class="memory-title">Verde y elegante</p>
+        <p class="memory-text">Ese vestido verde lima que te queda espectacular 💛</p>
+      </div>
+    </div>
+
+    <div class="memory-card">
+      <div class="memory-img-wrap">
+        <img src="fotos/gala2.jpg" alt="Vestidos de gala 2" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="placeholder" style="display:none">🍷</span>
+      </div>
+      <div class="memory-body">
+        <p class="memory-title">Rojo pasión</p>
+        <p class="memory-text">De rojo y con un Aperol en la mano — imbatible 🔴</p>
+      </div>
+    </div>
+
+    <div class="memory-card">
+      <div class="memory-img-wrap">
+        <img src="fotos/gala3.jpg" alt="Vestidos de gala 3" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="placeholder" style="display:none">🌿</span>
+      </div>
+      <div class="memory-body">
+        <p class="memory-title">Entre viñedos</p>
+        <p class="memory-text">Amarillo y Mendoza, la combinación perfecta 🍇</p>
+      </div>
+    </div>
+
+    <div class="memory-card">
+      <div class="memory-img-wrap">
+        <img src="fotos/gala4.jpg" alt="Vestidos de gala 4" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'">
+        <span class="placeholder" style="display:none">🌸</span>
+      </div>
+      <div class="memory-body">
+        <p class="memory-title">Marrón y hermosa</p>
+        <p class="memory-text">En el jardín, ese vestido marrón te quedaba divino 🌳</p>
+      </div>
+    </div>
+
+  </div>
+  </div>
+</section>
+
+<!-- ════════════════════════════════════════════
      MEMORIES
 ════════════════════════════════════════════ -->
-<section id="memorias">
+<section id="memorias-section">
+  <div style="max-width:1100px;margin:0 auto;padding:5rem 1.5rem;">
   <h2 class="section-heading">Nuestros Recuerdos 🩵</h2>
   <p class="section-sub">Casi 6 años de pura magia juntos</p>
 
@@ -768,6 +830,7 @@
     </div>
   </div>
 
+  </div>
 </section>
 
 <!-- ════════════════════════════════════════════
