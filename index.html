@@ -832,31 +832,41 @@
   <!-- ── VIAJES ── -->
   <div class="category">
     <h3 class="category-title">✈️ Viajes</h3>
-    <div class="memory-grid">
 
-      <div class="memory-card">
-        <div class="memory-img-wrap">
-          <!-- Reemplazá el src con la ruta a tu foto -->
-          <img src="fotos/viaje1.jpg" alt="Viaje 1" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="placeholder" style="display:none">🌍</span>
-        </div>
-        <div class="memory-body">
-          <p class="memory-title">Nuestro primer viaje juntos</p>
-          <p class="memory-text">Agregá acá el texto de este recuerdo...</p>
+    <div class="carousel-wrap" id="viajesCarousel">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="viajesTrack">
+
+          <div class="carousel-slide">
+            <img src="fotos/viaje1.jpg" alt="El Retiro, Madrid">
+            <div class="carousel-caption"><p>El Retiro, Madrid 🇪🇸</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/viaje2.jpg" alt="The Lion King, New York">
+            <div class="carousel-caption"><p>The Lion King, New York 🗽</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/viaje3.jpg" alt="Trekking en Bariloche">
+            <div class="carousel-caption"><p>Trekking en Bariloche 🏔️</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/viaje4.jpg" alt="En el agua">
+            <div class="carousel-caption"><p>De paseo en lancha 🛥️</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/viaje5.jpg" alt="En el aeropuerto">
+            <div class="carousel-caption"><p>Modo viajero activado 🧤</p></div>
+          </div>
+
         </div>
       </div>
 
-      <div class="memory-card">
-        <div class="memory-img-wrap">
-          <img src="fotos/viaje2.jpg" alt="Viaje 2" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="placeholder" style="display:none">🏖️</span>
-        </div>
-        <div class="memory-body">
-          <p class="memory-title">La playa</p>
-          <p class="memory-text">Agregá acá el texto de este recuerdo...</p>
-        </div>
-      </div>
-
+      <button class="carousel-btn prev" onclick="viajesMove(-1)" aria-label="Anterior">&#8592;</button>
+      <button class="carousel-btn next" onclick="viajesMove(1)"  aria-label="Siguiente">&#8594;</button>
     </div>
   </div>
 
@@ -1113,6 +1123,7 @@ function makeCarousel(trackId, moveFnName) {
 }
 makeCarousel('galaTrack',    'galaMove');
 makeCarousel('familiaTrack', 'familiaMove');
+makeCarousel('viajesTrack',  'viajesMove');
 </script>
 </body>
 </html>
