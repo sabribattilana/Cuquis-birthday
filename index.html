@@ -895,25 +895,6 @@
     </div>
   </div>
 
-  <!-- ── REGALOS ── -->
-  <div class="category">
-    <h3 class="category-title">🎁 Regalos</h3>
-    <div class="memory-grid">
-
-      <div class="memory-card">
-        <div class="memory-img-wrap">
-          <img src="fotos/regalo1.jpg" alt="Regalo 1" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="placeholder" style="display:none">🎁</span>
-        </div>
-        <div class="memory-body">
-          <p class="memory-title">El mejor regalo</p>
-          <p class="memory-text">Agregá acá el texto de este recuerdo...</p>
-        </div>
-      </div>
-
-    </div>
-  </div>
-
   <!-- ── MOMENTOS ESPECIALES ── -->
   <div class="category">
     <h3 class="category-title">🌟 Momentos Especiales</h3>
@@ -947,19 +928,41 @@
   <!-- ── JUNTADAS / COMIDAS ── -->
   <div class="category">
     <h3 class="category-title">🍕 Juntadas y Comidas</h3>
-    <div class="memory-grid">
 
-      <div class="memory-card">
-        <div class="memory-img-wrap">
-          <img src="fotos/comida1.jpg" alt="Comida" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="placeholder" style="display:none">🍝</span>
-        </div>
-        <div class="memory-body">
-          <p class="memory-title">Esa noche que cocinamos juntos</p>
-          <p class="memory-text">Agregá acá el texto de este recuerdo...</p>
+    <div class="carousel-wrap" id="comidaCarousel">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="comidaTrack">
+
+          <div class="carousel-slide">
+            <img src="fotos/comida1.jpg" alt="Focacceria en Madrid">
+            <div class="carousel-caption"><p>Focacceria en Madrid 🥖</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/comida2.jpg" alt="Applebee's en New York">
+            <div class="carousel-caption"><p>Applebee's en New York 😂</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/comida3.jpg" alt="Cocktails de noche">
+            <div class="carousel-caption"><p>Cocktails de noche 🃏</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/comida4.jpg" alt="Pasta y Aperol">
+            <div class="carousel-caption"><p>Pasta y Aperol 🍝</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/comida5.jpg" alt="Modo burger activado">
+            <div class="carousel-caption"><p>Modo burger activado 🍔</p></div>
+          </div>
+
         </div>
       </div>
 
+      <button class="carousel-btn prev" onclick="comidaMove(-1)" aria-label="Anterior">&#8592;</button>
+      <button class="carousel-btn next" onclick="comidaMove(1)"  aria-label="Siguiente">&#8594;</button>
     </div>
   </div>
 
@@ -1149,6 +1152,7 @@ function makeCarousel(trackId, moveFnName) {
 makeCarousel('galaTrack',    'galaMove');
 makeCarousel('familiaTrack', 'familiaMove');
 makeCarousel('viajesTrack',  'viajesMove');
+makeCarousel('comidaTrack',  'comidaMove');
 </script>
 </body>
 </html>
