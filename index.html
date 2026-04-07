@@ -898,30 +898,40 @@
   <!-- ── MOMENTOS ESPECIALES ── -->
   <div class="category">
     <h3 class="category-title">🌟 Momentos Especiales</h3>
-    <div class="memory-grid">
 
-      <div class="memory-card">
-        <div class="memory-img-wrap">
-          <img src="fotos/especial1.jpg" alt="Momento especial" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="placeholder" style="display:none">🌟</span>
-        </div>
-        <div class="memory-body">
-          <p class="memory-title">Un momento especial</p>
-          <p class="memory-text">Agregá acá el texto de este recuerdo...</p>
+    <div class="carousel-wrap" id="momentosCarousel">
+      <div class="carousel-track-outer">
+        <div class="carousel-track" id="momentosTrack">
+
+          <div class="carousel-slide">
+            <img src="fotos/especial1.jpg" alt="Momento especial 1">
+            <div class="carousel-caption"><p>Un momento único 🌟</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/especial2.jpg" alt="Momento especial 2">
+            <div class="carousel-caption"><p>Para no olvidar 💫</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/especial3.jpg" alt="Momento especial 3">
+            <div class="carousel-caption"><p>Juntos siempre ✨</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/especial4.jpg" alt="Momento especial 4">
+            <div class="carousel-caption"><p>El mejor Cuquis 💛</p></div>
+          </div>
+
+          <div class="carousel-slide">
+            <img src="fotos/especial5.jpg" alt="Momento especial 5">
+            <div class="carousel-caption"><p>Momentos que quedan 🎉</p></div>
+          </div>
+
         </div>
       </div>
-
-      <div class="memory-card">
-        <div class="memory-img-wrap">
-          <img src="fotos/especial2.jpg" alt="Momento especial 2" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
-          <span class="placeholder" style="display:none">💫</span>
-        </div>
-        <div class="memory-body">
-          <p class="memory-title">Otro momento para nunca olvidar</p>
-          <p class="memory-text">Agregá acá el texto de este recuerdo...</p>
-        </div>
-      </div>
-
+      <button class="carousel-btn prev" onclick="momentosMove(-1)" aria-label="Anterior">&#8592;</button>
+      <button class="carousel-btn next" onclick="momentosMove(1)"  aria-label="Siguiente">&#8594;</button>
     </div>
   </div>
 
@@ -1149,10 +1159,11 @@ function makeCarousel(trackId, moveFnName) {
     track.scrollBy({ left: dir * w, behavior: 'smooth' });
   };
 }
-makeCarousel('galaTrack',    'galaMove');
-makeCarousel('familiaTrack', 'familiaMove');
-makeCarousel('viajesTrack',  'viajesMove');
-makeCarousel('comidaTrack',  'comidaMove');
+makeCarousel('galaTrack',     'galaMove');
+makeCarousel('familiaTrack',  'familiaMove');
+makeCarousel('viajesTrack',   'viajesMove');
+makeCarousel('momentosTrack', 'momentosMove');
+makeCarousel('comidaTrack',   'comidaMove');
 </script>
 </body>
 </html>
