@@ -41,6 +41,33 @@
       overflow: hidden;
     }
 
+    .hero-inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 3rem;
+      position: relative;
+      z-index: 2;
+      flex-wrap: wrap;
+    }
+
+    .hero-text { display: flex; flex-direction: column; align-items: center; }
+
+    .hero-photo {
+      width: 260px;
+      height: 340px;
+      object-fit: cover;
+      border-radius: 1.5rem;
+      border: 4px solid rgba(147, 197, 253, 0.4);
+      box-shadow: 0 8px 40px rgba(0,0,0,0.5);
+      flex-shrink: 0;
+    }
+
+    @media (max-width: 600px) {
+      .hero-inner { flex-direction: column; gap: 1.5rem; }
+      .hero-photo { width: 200px; height: 260px; }
+    }
+
     /* animated grid background */
     #hero::after {
       content: '';
@@ -480,17 +507,23 @@
      HERO
 ════════════════════════════════════════════ -->
 <section id="hero">
-  <div class="hero-emoji">🎂</div>
-  <h1 class="hero-title">¡Feliz Cumpleaños,<br>Cuquis!</h1>
-  <p class="hero-subtitle">Hoy es tu día y quiero que lo sepas 🩵</p>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <div class="hero-emoji">🎂</div>
+      <h1 class="hero-title">¡Feliz Cumpleaños,<br>Cuquis!</h1>
+      <p class="hero-subtitle">Hoy es tu día y quiero que lo sepas 🩵</p>
 
-  <div class="love-card">
-    <p class="love-question">¿Me amas? 💙</p>
-    <div class="love-buttons" id="loveButtons">
-      <button class="btn-yes" id="btnYes" onclick="onYes()">¡Sí! 💙</button>
-      <button class="btn-no"  id="btnNo">No</button>
+      <div class="love-card">
+        <p class="love-question">¿Me amas? 💙</p>
+        <div class="love-buttons" id="loveButtons">
+          <button class="btn-yes" id="btnYes" onclick="onYes()">¡Sí! 💙</button>
+          <button class="btn-no"  id="btnNo">No</button>
+        </div>
+        <div class="love-answer" id="loveAnswer"></div>
+      </div>
     </div>
-    <div class="love-answer" id="loveAnswer"></div>
+
+    <img src="fotos/hero.jpg" alt="Cuquis con globo de cumpleaños" class="hero-photo">
   </div>
 </section>
 
